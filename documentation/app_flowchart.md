@@ -1,0 +1,26 @@
+flowchart TD
+    A[User visits platform] --> B[Click Discord OAuth Login]
+    B --> C[Authenticate with Discord]
+    C --> D[User Dashboard]
+    D --> E[Lead Researcher Branch]
+    D --> F[Co-Author Applicant Branch]
+
+    E --> G[Create Research Call]
+    G --> H[Enter call details: Title, Summary, Keywords, CRediT Taxonomy roles]
+    H --> I[Generate Unique Call URL]
+    I --> J[Post URL to Discord Channel]
+    J --> K[Save Call Data in Database]
+    K --> L[Manage Research Call]
+    L --> M[Edit Details]
+    L --> N[Add Publication Links]
+    L --> O[Close Project: Invalidate URL]
+
+    F --> P[Visit Unique Call URL]
+    P --> Q[Fill Application Form: Name, Email, Roles, ORCID optional]
+    Q --> R[Submit Application]
+    R --> S[Store Application Data]
+    S --> T[Send Email Notification to Lead Researcher]
+    Q --> U[Optional ORCID Integration: Pre-fill Info]
+
+    D --> V[Admin Dashboard]
+    V --> W[System Management]

@@ -1,0 +1,114 @@
+---
+description: Apply these rules when creating the project
+globs:
+alwaysApply: true
+---
+## Project Overview
+
+*   **Type:** Web-based Research Collaboration Platform
+*   **Description:** A lightweight platform that facilitates research collaboration by allowing authors to create and manage calls for co-authors. The design is inspired by GitBook with a clean and intuitive UI.
+*   **Primary Goal:** Enable seamless research collaboration by integrating core features such as Discord authentication, research call management, co-author applications, paper management, and administrative oversight, all built with a minimal tech stack.
+
+## Project Structure
+
+### Framework-Specific Routing
+
+*   **Directory Rules:**
+
+    *   **Next.js 14 (App Router):** Follow the `app/[route]/page.tsx` conventions for routing.
+    *   Example 1: "Next.js 14 (App Router)" → `app/[route]/page.tsx` conventions
+    *   Example 2: "Next.js (Pages Router)" → `pages/[route].tsx` pattern (not used in this project)
+    *   Example 3: "React Router 6" → `src/routes/` with `createBrowserRouter` (not applicable here)
+
+### Core Directories
+
+*   **Versioned Structure:**
+
+    *   **app/**: Contains Next.js 14 App Router implementations including API routes, nested layouts, and components (e.g., `app/api` for API route handlers, `app/dashboard` for authenticated user pages).
+    *   Example 1: `app/api` → "Next.js 14 API routes with Route Handlers"
+    *   Example 2: `app/views` (if applicable) → For additional UI component patterns inspired by CodeGuide Starter Lite
+
+### Key Files
+
+*   **Stack-Versioned Patterns:**
+
+    *   **app/dashboard/layout.tsx:** Next.js 14 root layout for authenticated dashboard views
+    *   **app/auth/login/page.tsx:** Next.js 14 server action based authentication page
+    *   Example 1: `app/dashboard/layout.tsx` → "Next.js 14 root layouts"
+    *   Example 2: `pages/_app.js` → "Next.js Pages Router customization" (not applicable here)
+
+## Tech Stack Rules
+
+*   **Version Enforcement:**
+
+    *   **next@14:** Enforce App Router using the `app/` directory; avoid using `getInitialProps`.
+    *   **tailwindcss@latest:** Utilize JIT mode, purge unused styles, and adhere to configured Tailwind best practices.
+    *   **typescript@latest:** Enforce strict type-checking and best coding practices for maintainability.
+    *   **shadcn-ui:** Follow composable and utility class patterns for a modular component interface.
+    *   **supabase@latest:** Use secure database policies and realtime capabilities. Ensure API routes are properly secured.
+    *   **clerk-auth:** Implement secure authentication flows using official Clerk integration.
+
+## PRD Compliance
+
+*   **Non-Negotiable:**
+
+    *   "Unique URLs are generated for each research call and become invalid when the project is closed." → This constraint must be adhered to for managing research calls.
+    *   "Discord OAuth must be implemented for user authentication and data synchronization." → Mandatory integration.
+
+## App Flow Integration
+
+*   **Stack-Aligned Flow:**
+
+    *   Example: "Next.js 14 Auth Flow → `app/auth/login/page.tsx` uses server actions for secure authentication and session management."
+    *   Research Call Flow: Create new calls via `app/research-calls/create/page.tsx` and manage applications in `app/dashboard/page.tsx`.
+
+## Best Practices
+
+*   **Next.js**
+
+    *   Use the App Router exclusively to maintain consistency and enable server actions.
+    *   Leverage server components for enhanced performance and SEO.
+    *   Optimize image and static asset handling via built-in Next.js features.
+
+*   **Tailwind CSS**
+
+    *   Configure JIT mode and purge unused CSS to optimize load times.
+    *   Maintain consistency through a centralized configuration file (tailwind.config.js).
+    *   Use responsive utility classes for mobile-first design.
+
+*   **TypeScript**
+
+    *   Enable strict mode in tsconfig and adhere to type safety best practices.
+    *   Utilize interfaces and types effectively to avoid runtime errors.
+    *   Regularly update dependencies to leverage improvements in type checking.
+
+*   **Shadcn UI**
+
+    *   Embrace component reusability and consistent styling conventions.
+    *   Align component designs with the minimalist GitBook-inspired UI.
+    *   Integrate with Tailwind for enhanced utility-based styling.
+
+*   **Supabase**
+
+    *   Ensure secure database operations using Row Level Security (RLS).
+    *   Use Supabase Realtime where applicable for live collaboration features.
+    *   Regularly audit security policies and database access controls.
+
+*   **Clerk Auth**
+
+    *   Implement official Clerk UI components to manage user sessions and authentication states.
+    *   Ensure integration with Discord OAuth is secure and follows recommended practices.
+    *   Regularly update Clerk configurations to maintain compliance with best security practices.
+
+*   **Discord Integration**
+
+    *   Utilize secure OAuth endpoints for user authentication.
+    *   Auto-populate user details (e.g., username) when authenticated via Discord.
+    *   Ensure synchronization between Discord data and internal user records is robust and secure.
+
+## Rules
+
+*   Derive folder/file patterns directly from the version specifications outlined in the Tech Stack Document.
+*   If using Next.js 14 App Router, enforce the usage of the `app/` directory with nested route folders exclusively.
+*   Do not mix version patterns; for example, avoid using a `pages/` directory in an App Router project.
+*   Mirror these conventions for any additional frameworks or integrations (e.g., React Router, SvelteKit) if they are incorporated in the future.

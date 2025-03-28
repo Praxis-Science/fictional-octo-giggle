@@ -1,0 +1,36 @@
+{
+  "name": "research-collaboration-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A platform for research authors to create and manage calls for co-authors",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.12.12",
+    "@sendgrid/mail": "^8.1.4",
+    "@supabase/supabase-js": "^2.49.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "discord.js": "^14.18.0",
+    "lucide-react": "^0.484.0",
+    "next": "^14.2.26",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.26",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
